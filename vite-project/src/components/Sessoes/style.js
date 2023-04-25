@@ -1,31 +1,58 @@
 import styled from 'styled-components'
 
 const Estilosessoes = styled.div`
- max-width: 1200px;
+ max-width: 1400px;
  margin: 0 auto;
  margin-bottom: 150px;
  .cinema-data{
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 100%;
   justify-content: space-between;
   width: 100%;
   padding: 0 20px;
 
+  .organizado{
+    display: flex;
+    width: 100%;
+  }
+
   .esquerda{
-    h4{
-      font-size: 14px;
+    padding: 15px 22px;
+    background-color: rgb(35, 35, 35);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 30%;
+    margin-right: 2%;
+    .cinema{
+      display: none;
     }
-    h3{
-      font-size: 20px;
+    .selecione{
+      display: flex;
+      position: relative;
+      i{
+        position: absolute;
+        right: 0;
+        top: 20%;
+        cursor: pointer;
+      }
+      .rodar{
+        transform: rotate(90deg);
+      }
+    }
+    h4{
     }
   }
   .datas{
-    width: 100%;
+    width: 70%;
+    padding: 15px 20px;
+    background-color: rgb(35, 35, 35);
+    border-radius: 10px;
+    margin-bottom: 20px;
    .hoje{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto;
     justify-content: space-between;
-    max-width: 600px;
+    width: 100%;
     overflow-x: scroll;
     ::-webkit-scrollbar {
       height: 8px;               /* width of the entire scrollbar */
@@ -77,35 +104,19 @@ const Estilosessoes = styled.div`
 
  .filmes{
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 100%;
   width: 100%;
   padding: 0 20px;
-  .filmeEscolhido{
-   .card{
-    padding-top: 80%;
-    width: 70%;
-    position: relative;
-
-    img{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-   }
-  }
 
   a{
     text-decoration: none;
   }
 
   .cardsFilmes{
-   display: flex;
-   grid-template-columns: auto auto auto auto;
-   justify-content: space-between;
+   
    margin-bottom: 20px;
    padding: 8px;
+   height: 380px;
    overflow-x: scroll;
    ::-webkit-scrollbar {
       height: 8px;               /* width of the entire scrollbar */
@@ -117,28 +128,60 @@ const Estilosessoes = styled.div`
       background-color: #2196f3;    /* color of the scroll thumb */
       border-radius: 20px;
     }
+    .interno{
+      display: flex;
+      width: 2200px
+    }
    .card{
-    padding-top: 200px;
-    width: 150px;
-    background-color: black;
-    border-radius: 10px;
+    width: 180px;
+    height: 300px;
+    border: none;
     position: relative;
-    margin-right: 20px;
-    img{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-      
+    border-radius: 8px;
+    transition: 0.5s;
+    margin-top: 12px;
+    background-color: transparent;
+    margin-right: 30px;
+    .zoom{
+      position: relative;
+      border-radius: 8px;
+      transition: 0.5s;
+      border: 1px solid black;
+      background-color: transparent;
+      border: none;
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        :hover{
+          position: absolute;
+          left: -20px;
+          top: -20px;
+          width: calc(100% + 40px);
+          height: calc(100% + 40px);
+          border-radius: 8px;
+          transition: 0.4s;
+          border: 1px solid black;
+          z-index: 1;
+        }
+      }
     }
    }
   }
 
+  .divisao{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
   .salas{
-    height: 200px;
+    height: 100%;
     overflow-y: scroll;
+    width: 60%;
     ::-webkit-scrollbar {
       width: 8px;               /* width of the entire scrollbar */
     }
@@ -156,6 +199,26 @@ const Estilosessoes = styled.div`
             
     }
   }
+  .filmeEscolhido{
+    width: 800px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+      .card{
+        padding-top: 100%;
+        width: 70%;
+        position: relative;
+        right: 0;
+
+        img{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
  }
 
  @media (max-width: 1000px){

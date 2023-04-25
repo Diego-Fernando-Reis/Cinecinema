@@ -20,13 +20,25 @@ function Home(){
                 if(key == 0){
                   return(
                     <div className="carousel-item active h-100">
-                      <img className="d-block w-100 h-100" alt="..." key={key} src={slide.cartaz}/>
+                      <img className="d-block w-100 h-100" alt="..." key={key} src={slide.banner}/>
+                      <div className="hover">
+                        <div className="title">
+                          <h2 className="text-primary animate__animated animate__fadeInRight animate__delay-1s">{slide.filme}</h2>
+                          <p className="animate__animated animate__fadeInRight animate__delay-1s">{slide.sinopse}</p>
+                        </div>
+                      </div>
                     </div>
                   )
                 }else{
                   return(
                     <div className="carousel-item h-100">
-                      <img className="d-block w-100 h-100" alt="..." key={key} src={slide.cartaz}/>
+                      <img className="d-block w-100 h-100" alt="..." key={key} src={slide.banner}/>
+                      <div className="hover">
+                        <div className="title">
+                          <h2 className="text-primary animate__animated animate__fadeInRight animate__delay-1s">{slide.filme}</h2>
+                          <p className="animate__animated animate__fadeInRight animate__delay-1s">{slide.sinopse}</p>
+                        </div>
+                      </div>
                     </div>
                   )
                 }
@@ -35,9 +47,6 @@ function Home(){
             </Slider>
           </div>
           <div className='sessoes'>
-              <div className="title">
-                <h2>Nossas <span>Sessões</span></h2>
-              </div>
             <Sessoes />
           </div>
           <div className='blog'>
